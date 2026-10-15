@@ -22,6 +22,34 @@ body{background:radial-gradient(1200px 500px at 100% -10%,#fde4dc 0,transparent 
 .hero-visual:before{content:'';position:absolute;width:min(86%,360px);aspect-ratio:1;border-radius:28px;border:1.5px dashed rgba(255,255,255,.35);transform:rotate(-5deg)}
 .climate-art{width:100%;max-width:400px;height:auto;display:block;border-radius:26px;box-shadow:0 30px 60px rgba(30,3,4,.45),0 0 0 1px rgba(255,255,255,.18);transform:rotate(2.5deg);position:relative}
 @media(prefers-reduced-motion:no-preference){.climate-art{animation:art-float 7s ease-in-out infinite}@keyframes art-float{0%,100%{transform:rotate(2.5deg) translateY(0)}50%{transform:rotate(1deg) translateY(-8px)}}}
+/* Görseldeki canlı ayrıntılar: güneş, panellerden eve akan elektrik, yelkenli, dalgalar, palmiyeler, kuşlar, ısınma yayı */
+@media(prefers-reduced-motion:no-preference){
+.ca-arc{animation:ca-arc 6s ease-in-out infinite}@keyframes ca-arc{0%,14%,100%{opacity:1}6%{opacity:.4}}
+.ca-rays{animation:ca-spin 24s linear infinite}@keyframes ca-spin{to{transform:rotate(360deg)}}
+.ca-glow{animation:ca-glow 3s ease-in-out infinite}@keyframes ca-glow{50%{transform:scale(1.3);opacity:.15}}
+.ca-glint{animation:ca-glint 4s ease-in-out infinite}@keyframes ca-glint{0%{transform:translateX(-20px)}50%,100%{transform:translateX(140px)}}
+.ca-current{animation:ca-current .9s linear infinite}@keyframes ca-current{to{stroke-dashoffset:-16}}
+.ca-bolt{animation:ca-bolt 1.6s ease-in-out infinite}@keyframes ca-bolt{0%,100%{opacity:.2}50%{opacity:1}}
+.ca-window{animation:ca-window 2.4s ease-in-out infinite}@keyframes ca-window{50%{fill:#fff3b8}}
+.ca-drift{animation:ca-drift 22s ease-in-out infinite alternate}@keyframes ca-drift{from{transform:translateX(-36px)}to{transform:translateX(40px)}}
+.ca-bob{transform-origin:0 6px;animation:ca-bob 3.6s ease-in-out infinite}@keyframes ca-bob{0%,100%{transform:translateY(0) rotate(-2.5deg)}50%{transform:translateY(2px) rotate(2.5deg)}}
+.ca-sail{transform-origin:2px -5px;animation:ca-sail 4.5s ease-in-out infinite}.ca-jib{transform-origin:-2px -4px;animation:ca-sail 4.5s -.8s ease-in-out infinite}@keyframes ca-sail{50%{transform:scaleX(.82)}}
+.ca-flag{transform-box:fill-box;transform-origin:0 50%;animation:ca-flag .8s ease-in-out infinite alternate}@keyframes ca-flag{to{transform:scaleX(.6) skewY(-8deg)}}
+.ca-wake{animation:ca-wake 2.2s ease-in-out infinite}@keyframes ca-wake{50%{opacity:.3;transform:translateX(-4px)}}
+.ca-wave{animation:ca-wave 5s ease-in-out infinite alternate}.ca-wave:nth-child(2n){animation-duration:6.5s;animation-direction:alternate-reverse}@keyframes ca-wave{from{transform:translateX(-9px)}to{transform:translateX(9px)}}
+.ca-palm{animation:ca-sway 5s ease-in-out infinite}.ca-sprout{animation:ca-sway 3.5s ease-in-out infinite}@keyframes ca-sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+.ca-bird{animation:ca-bird 9s ease-in-out infinite}@keyframes ca-bird{50%{transform:translate(14px,-6px)}}
+.ca-wing{transform-box:fill-box;transform-origin:center;animation:ca-wing .7s ease-in-out infinite}@keyframes ca-wing{50%{transform:scaleY(.4)}}
+.ca-mercury{transform-origin:0 6px;animation:ca-mercury 5s ease-in-out infinite}@keyframes ca-mercury{0%{transform:scaleY(.3)}60%,100%{transform:scaleY(1)}}
+.ca-charge{transform-origin:2.2px -13.4px;animation:ca-charge 3s steps(4,end) infinite}@keyframes ca-charge{to{transform:scaleY(3.5)}}
+.ca-drip{animation:ca-drip 1.6s ease-in infinite}@keyframes ca-drip{0%{transform:translateY(0);opacity:0}20%{opacity:1}85%{transform:translateY(7px);opacity:1}100%{transform:translateY(8px);opacity:0}}
+/* Gece/gündüz döngüsü (20 sn): gündüz uzun, gece kısa; panellerin elektriği gece durur */
+.ca-night{animation:ca-night 20s ease-in-out infinite}@keyframes ca-night{0%,45%,100%{opacity:0}57%,85%{opacity:.58}}
+.ca-lights{animation:ca-lights 20s ease-in-out infinite}@keyframes ca-lights{0%,47%,97%,100%{opacity:0}59%,85%{opacity:1}}
+.ca-solar{animation:ca-solar 20s ease-in-out infinite}@keyframes ca-solar{0%,42%,97%,100%{opacity:1}52%,88%{opacity:0}}
+.ca-sun{animation:ca-sun 20s ease-in-out infinite}@keyframes ca-sun{0%,40%,100%{transform:translateY(0);opacity:1}54%{transform:translateY(50px);opacity:0}88%{transform:translateY(50px);opacity:0}}
+.ca-star{animation:ca-star 2.4s ease-in-out infinite}@keyframes ca-star{50%{opacity:.3}}
+}
 .heat-stripes{grid-column:1/-1;display:flex;height:16px;margin:0 -44px}
 .heat-stripes span{flex:1}
 @media(max-width:1000px){.home-start.climate-hero{grid-template-columns:1fr}.hero-visual{order:-1}.climate-art{max-width:300px}.climate-hero .activities{grid-template-columns:repeat(3,1fr)}}
