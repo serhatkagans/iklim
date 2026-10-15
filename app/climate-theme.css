@@ -1,0 +1,125 @@
+/* ——— İklim teması: COP31 Antalya 2026 ———
+   Kırmızı kurumsal palet korunur; köz ve toprak tonlarıyla ısınma şeritleri, gün batımı ve Akdeniz kıyısı görsel dilini taşır.
+   globals.css'ten sonra yüklenir (layout.tsx). */
+:root{--paper:#fbf7f5;--line:#efe2dc;--lilac:#f8ece8;--sage:#fdeee6;--peach:#fde4dc;--yellow:#fff1df;--orange-dark:#8f1015;--ember:#e2553f;--deep:#3a0709;--sand:#fff6f0;
+--stripes:linear-gradient(90deg,#fde7dc 0 9%,#fbd0bd 9% 18%,#f8b49b 18% 27%,#f39478 27% 36%,#ec7458 36% 45%,#e2553f 45% 55%,#d43a2c 55% 64%,#c4161c 64% 73%,#a51218 73% 82%,#860e14 82% 91%,#650b10 91%)}
+body{background:radial-gradient(1200px 500px at 100% -10%,#fde4dc 0,transparent 60%),var(--paper)}
+::selection{background:#fbd0bd;color:#3a0709}
+
+/* Başlık rozeti: COP31 */
+.cop-badge{display:flex;flex-direction:column;align-items:center;color:var(--orange);font-weight:800;letter-spacing:-.3px}
+.cop-badge small{font-size:7px;letter-spacing:1.8px;color:var(--muted);margin:2px 0}
+
+/* Vitrin: solda metin, sağda tema görseli; altta etkinlikler ve ısınma şeridi */
+.home-start.climate-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:12px 36px;align-items:center;background:linear-gradient(140deg,#e2553f 0%,#c4161c 36%,#7d0e12 74%,#3a0709 100%);padding:44px 44px 0}
+.home-start.climate-hero:before{background:radial-gradient(circle at 78% 30%,rgba(255,217,168,.22) 0 220px,transparent 221px),radial-gradient(circle at 0% 100%,rgba(0,0,0,.18) 0 260px,transparent 261px)}
+.climate-hero .hero-text>p.home-lead{color:#fff;font-size:18px;line-height:1.6;margin:0 0 22px;max-width:620px}
+.climate-hero h1{font-size:64px}
+.climate-hero h1 em{color:#ffd9a8;display:inline-block}
+.climate-hero .activities{grid-column:1/-1;grid-template-columns:repeat(6,1fr);margin:8px 0 26px}
+.climate-hero .activity{min-height:96px}
+.hero-visual{display:flex;justify-content:center;align-items:center;position:relative;padding:18px 0}
+.hero-visual:before{content:'';position:absolute;width:min(86%,360px);aspect-ratio:1;border-radius:28px;border:1.5px dashed rgba(255,255,255,.35);transform:rotate(-5deg)}
+.climate-art{width:100%;max-width:400px;height:auto;display:block;border-radius:26px;box-shadow:0 30px 60px rgba(30,3,4,.45),0 0 0 1px rgba(255,255,255,.18);transform:rotate(2.5deg);position:relative}
+@media(prefers-reduced-motion:no-preference){.climate-art{animation:art-float 7s ease-in-out infinite}@keyframes art-float{0%,100%{transform:rotate(2.5deg) translateY(0)}50%{transform:rotate(1deg) translateY(-8px)}}}
+.heat-stripes{grid-column:1/-1;display:flex;height:16px;margin:0 -44px}
+.heat-stripes span{flex:1}
+@media(max-width:1000px){.home-start.climate-hero{grid-template-columns:1fr}.hero-visual{order:-1}.climate-art{max-width:300px}.climate-hero .activities{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.home-start.climate-hero{padding:24px 18px 0}.heat-stripes{margin:0 -18px}.climate-hero h1{font-size:40px}.climate-art{max-width:240px}.climate-hero .activities{grid-template-columns:1fr 1fr}.climate-hero .hero-text>p.home-lead{font-size:15px}}
+
+/* COP31 bölümü */
+.cop31{margin:34px 0 10px;display:grid;gap:22px}
+.cop31 h2 em,.cop31 h3 em{color:var(--orange)}
+.cop31-head{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:end}
+.cop31-head h2{font-size:40px;letter-spacing:-1.5px;line-height:1.1;margin:8px 0 12px}
+.cop31-head p{color:var(--muted);max-width:720px;margin:0}
+.countdown{min-width:210px;text-align:center;padding:18px 22px;border-radius:18px;color:#fff;background:linear-gradient(160deg,#c4161c,#650b10);box-shadow:0 14px 30px rgba(101,11,16,.3);display:flex;flex-direction:column;gap:2px;position:relative;overflow:hidden}
+.countdown:after{content:'';position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--stripes)}
+.countdown small{font-size:10px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#fbd0bd}
+.countdown b{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:56px;line-height:1;letter-spacing:-2px}
+.countdown span{font-size:13px;color:#fde7dc;min-height:1.2em;margin-bottom:4px}
+.cop31-facts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cop31-facts li{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;display:grid;grid-template-columns:auto 1fr;gap:2px 12px;align-items:center}
+.cop31-facts li>span{grid-row:span 2;font-size:24px;width:48px;height:48px;border-radius:12px;background:var(--peach);display:grid;place-items:center}
+.cop31-facts b{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:18px}
+.cop31-facts small{color:var(--muted);font-size:12px;line-height:1.5}
+.cop31-guide{display:grid;grid-template-columns:1.1fr 1fr;gap:26px;background:var(--sand);border:1px solid var(--line);border-radius:20px;padding:28px 28px 34px;position:relative;overflow:hidden}
+.cop31-guide:after{content:'';position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--stripes)}
+.cop31-guide h3{font-size:28px;letter-spacing:-.8px;margin:6px 0 10px}
+.cop31-guide p{color:#5f5455;margin:0 0 16px}
+.cop31-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cop31-steps li{background:#fff;border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:4px;border:1px solid var(--line)}
+.cop31-steps li span{width:28px;height:28px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px;margin-bottom:4px}
+.cop31-steps b{font-family:'Plus Jakarta Sans',Arial,sans-serif}
+.cop31-steps small{color:var(--muted);font-size:12px;line-height:1.5}
+.section-heading.compact h2{font-size:32px;letter-spacing:-1px;margin:6px 0}
+.section-heading.compact p{color:var(--muted);margin:0}
+.focus-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.focus-card{text-align:left;border:0;border-radius:18px;padding:20px 18px;display:flex;flex-direction:column;gap:6px;min-height:200px;color:#fff;position:relative;overflow:hidden;background:linear-gradient(160deg,#e2553f,#a51218)}
+.focus-card:nth-child(2){background:linear-gradient(160deg,#d43a2c,#860e14)}
+.focus-card:nth-child(3){background:linear-gradient(160deg,#c4161c,#650b10)}
+.focus-card:nth-child(4){background:linear-gradient(160deg,#a51218,#3a0709)}
+.focus-card:after{content:'';position:absolute;right:-40px;top:-40px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,.1)}
+.focus-emoji{font-size:28px;width:54px;height:54px;border-radius:14px;background:rgba(255,255,255,.16);display:grid;place-items:center;margin-bottom:6px}
+.focus-card b{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:17px;line-height:1.25}
+.focus-card small{color:#fde7dc;line-height:1.5;font-size:12px}
+.focus-card em{margin-top:auto;font-style:normal;font-size:12px;font-weight:700;color:#ffd9a8}
+.climate-facts{border-radius:20px;padding:22px 24px;background:#fff;border:1px solid var(--line)}
+.climate-facts ul{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.climate-facts button{width:100%;text-align:left;border:0;background:none;padding:6px 0 6px 14px;border-left:3px solid var(--orange);display:flex;flex-direction:column}
+.climate-facts b{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:34px;letter-spacing:-1px;color:var(--orange);line-height:1.1}
+.climate-facts small{color:var(--muted);font-size:12px}
+@media(max-width:1000px){.focus-grid{grid-template-columns:1fr 1fr}.cop31-guide{grid-template-columns:1fr}.climate-facts ul{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.cop31-head{grid-template-columns:1fr}.cop31-head h2{font-size:30px}.countdown{min-width:0}.cop31-facts{grid-template-columns:1fr}.cop31-guide{padding:20px 20px 28px}.focus-card{min-height:170px}}
+@media(max-width:480px){.focus-grid,.cop31-steps{grid-template-columns:1fr}}
+
+/* Kapağı olmayan çalışma grubu: ısınma şeritleri üstünde grup simgesi */
+.work-cover-empty{background:linear-gradient(180deg,rgba(58,7,9,.05),rgba(58,7,9,.72)),var(--stripes);color:#fff;border:0}
+.work-cover-empty b,.work-cover-empty span{text-shadow:0 1px 8px rgba(30,3,4,.5)}
+/* Topluluk bandı ve alt bilgi: sıcak zemin, ince ısınma şeridi */
+.community-banner{background:var(--sand);border-color:var(--line)}
+footer{position:relative}
+footer:before{content:'';position:absolute;left:28px;right:28px;top:-1px;height:3px;border-radius:3px;background:var(--stripes)}
+/* İlerleme çubukları ve oyun süresi: ısınan renk geçişi (doğru/yanlış renkleri anlamları gereği korunur) */
+progress::-webkit-progress-value{background:linear-gradient(90deg,#f39478,#c4161c)}
+progress::-moz-progress-bar{background:linear-gradient(90deg,#f39478,#c4161c)}
+.game-timer span{background:linear-gradient(90deg,#f39478,#c4161c)}
+
+/* Terim seçimi: arama kutusu ve tüm çalışma grupları görünür etiketler hâlinde */
+.term-filter{display:grid;gap:14px;margin:18px 0 14px;padding:16px;background:#fff;border:1px solid var(--line);border-radius:18px}
+.term-search{display:flex;align-items:center;gap:10px;min-height:52px;padding:0 8px 0 16px;border:1.5px solid var(--line);border-radius:14px;background:var(--paper);transition:border-color .15s,box-shadow .15s}
+.term-search:focus-within{border-color:var(--orange);box-shadow:0 0 0 4px #fde4dc;background:#fff}
+.term-search>span{font-size:20px;color:var(--orange)}
+.term-search input{flex:1;min-width:0;border:0;outline:0;background:transparent;font-size:15px;padding:12px 0;color:var(--ink)}
+.term-search input::-webkit-search-cancel-button{display:none}
+.term-search-clear{border:0;background:var(--peach);color:var(--orange);width:32px;height:32px;border-radius:50%;font-size:18px;line-height:1}
+.group-chips{display:flex;flex-wrap:wrap;gap:8px}
+.group-chips button{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:600;color:var(--ink)}
+.group-chips button small{min-width:22px;padding:1px 7px;border-radius:999px;background:var(--peach);color:var(--orange);font-size:11px;font-weight:800;text-align:center}
+.group-chips button.chosen{background:var(--orange);border-color:var(--orange);color:#fff}
+.group-chips button.chosen small{background:rgba(255,255,255,.22);color:#fff}
+.group-chips button.no-terms:not(.chosen){color:var(--muted);background:var(--paper)}
+.group-chips button.no-terms small{background:#f1ebe8;color:var(--muted)}
+.button-row.center{justify-content:center}
+.words-section .empty p{color:var(--muted);margin:0 0 14px}
+/* Sözlük boşken: her grup bir öneri kartı */
+.empty-dictionary{margin-top:18px;padding:24px;border-radius:20px;background:var(--sand);border:1px solid var(--line);position:relative;overflow:hidden}
+.empty-dictionary:after{content:'';position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--stripes)}
+.empty-dictionary-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:18px}
+.empty-dictionary-head>span{font-size:30px;width:58px;height:58px;flex:none;border-radius:16px;background:#fff;display:grid;place-items:center;box-shadow:0 6px 16px rgba(101,11,16,.08)}
+.empty-dictionary-head h3{font-size:22px;margin:4px 0 6px}
+.empty-dictionary-head p{color:var(--muted);margin:0;max-width:720px}
+.group-pick{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.group-pick button{text-align:left;border:1px solid var(--line);background:#fff;border-radius:16px;padding:16px 14px;display:flex;flex-direction:column;gap:4px;min-height:150px}
+.group-pick button:hover{border-color:var(--orange);box-shadow:0 10px 24px rgba(101,11,16,.1)}
+.group-pick button>span{font-size:24px;margin-bottom:4px}
+.group-pick b{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:14px;line-height:1.3}
+.group-pick small{color:var(--muted);font-size:12px;line-height:1.45}
+.group-pick em{margin-top:auto;padding-top:8px;font-style:normal;font-size:12px;font-weight:700;color:var(--orange)}
+@media(max-width:1100px){.group-pick{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.group-pick{grid-template-columns:1fr 1fr}.group-chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;margin:0 -16px;padding-left:16px;padding-right:16px}.group-chips button{flex:none}.term-filter{padding:12px}}
+/* Harf çubuğu: az harf varken düğmeler sayfa boyunca uzamasın */
+.letters{margin:0 0 20px}
+.letters button{flex:0 0 auto;min-width:40px;height:40px}
+.letters .chosen{background:var(--orange);border-color:var(--orange)}
+.words-section .empty{background:var(--sand);border:1px solid var(--line);border-radius:18px}
